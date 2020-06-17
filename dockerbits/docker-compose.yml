@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  om-api:
+    build: openmoney-api
+    # ports:
+    #   - 8080:80
+    # volumes:
+    #   - ./openmoney-api:/opt/om
+    environment:
+      OM_ENV: dev
+      ROOT_SPACE: cc
+      ROOT_CURRENCY: cc
+      COUCHBASE_ADMIN_USERNAME: admin
+      COUCHBASE_ADMIN_PASSWORD: asdfasdf
+      COUCHBASE_LO: couchbase
+      ADMIN_USERNAME: omadmin
+      ADMIN_PASSWORD: ompass
+      ADMIN_EMAIL: om@localhost.com
+      PORT: 80
+
+  om-ui:
+    build: openmoney-network
+    ports:
+      - 8888:80
+
+  couchbase:
+    image: couchbase:community-6.5.0
+    # ports:
+    #   - 8091:8091
