@@ -1,6 +1,7 @@
 FROM node:8
 
-COPY . /opt/om
+COPY ./openmoney-api /opt/om
+COPY ./dockerbits/openmoney-api/entrypoint.sh /opt/om/entrypoint.sh
 
 WORKDIR /opt/om
 

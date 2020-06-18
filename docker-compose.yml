@@ -2,7 +2,9 @@ version: '3.5'
 
 services:
   om-api:
-    build: openmoney-api
+    build:
+      context: .
+      dockerfile: dockerbits/openmoney-api/Dockerfile
     # ports:
     #   - 8080:80
     # volumes:
@@ -20,7 +22,9 @@ services:
       PORT: 80
 
   om-ui:
-    build: openmoney-network
+    build:
+      context: .
+      dockerfile: dockerbits/openmoney-network/Dockerfile
     ports:
       - 8888:80
 

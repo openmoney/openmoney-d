@@ -1,0 +1,6 @@
+[submodule "openmoney-api"]
+	path = openmoney-api
+	url = https://github.com/jethro-swan/openmoney-api
+[submodule "openmoney-network"]
+	path = openmoney-network
+	url = https://github.com/jethro-swan/openmoney-network
