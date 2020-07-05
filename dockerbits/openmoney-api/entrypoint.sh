@@ -16,7 +16,7 @@ main() {
 }
 
 check_couchbase() {
-    for i in {1..30}; do
+    for i in {1..60}; do
         local result="$(couchbase_api pools/default/buckets -w '%{http_code}')"
         [[ $result == "[]200" || $result == "401" ]] && printf "Openmoney couchbase buckets not found.\n" && return 0
         [[ ${result:${#result}-3} == '200' ]] && printf "Openmoney couchbase buckets found.\n" && return 1
