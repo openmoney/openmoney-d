@@ -3,6 +3,7 @@
 : ${COUCHBASE_LO:=couchbase}
 : ${COUCHBASE_ADMIN_USERNAME:=admin}
 : ${COUCHBASE_ADMIN_PASSWORD:=asdfasdf}
+: ${COUCHBASE_INIT_WAIT:=15}
 
 
 main() {
@@ -37,8 +38,8 @@ init_couchbase() {
         couchbase_init_bucket
     done
     # Installs seed data.  We need to wait or the buckets are not found.
-    printf '\nGiving couchbase 5 seconds to work itself out.\n'
-    sleep 5
+    printf '\nGiving couchbase %s seconds to work itself out.\n' "$COUCHBASE_INIT_WAIT"
+    sleep $COUCHBASE_INIT_WAIT
     npm run install:db
 }
 
