@@ -8,6 +8,7 @@ services:
     # ports:
     #   - 8080:80
     # volumes:
+    #   - ./dockerbits/openmoney-api/entrypoint.sh:/opt/om/entrypoint.sh
     #   - ./openmoney-api:/opt/om
     environment:
       OM_ENV: dev
@@ -16,6 +17,7 @@ services:
       COUCHBASE_ADMIN_USERNAME: admin
       COUCHBASE_ADMIN_PASSWORD: asdfasdf
       COUCHBASE_LO: couchbase
+      # COUCHBASE_INIT_WAIT: 15
       ADMIN_USERNAME: omadmin
       ADMIN_PASSWORD: ompass
       ADMIN_EMAIL: om@localhost.com
