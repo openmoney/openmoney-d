@@ -34,3 +34,6 @@ services:
     image: couchbase:community-6.5.0
     # ports:
     #   - 8091:8091
+    # Example for storing couchbase datasets locally.  This path must exist on your host.
+    # volumes:
+    #   - ./dockerbits/couchdata/dataset0:/opt/couchbase/var/lib/couchbase
